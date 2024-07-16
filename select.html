@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+    <style>
+        body {
+            background-color: cadetblue;
+        }
+        a {
+            font-size: 1.3rem;
+            color: inherit;
+        }
+        #the_pass {
+            display: inline;
+            font: 400 orange;
+        }
+        button {
+            background-color: inherit;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    {% for answer in reason %}
+    <form action="/add" method="post">
+        <input type="hidden" name="the_instance" value='{{ answer | tojson }}'>
+        <input type="hidden" name="add" value="0">
+        <button type="submit">
+            {% if answer['release_date'] %}
+                {{ answer['title'] }} --- {{ answer['release_date'] }}
+            {% else %}
+                {{ answer['title'] }}
+            {% endif %}
+        </button>
+        <a href="https://image.tmdb.org/t/p/w500{{ answer['poster_path'] }}" id="the_pass"><sub>poster</sub></a>
+    </form>
+    {% endfor %}
+</body>
+</html>

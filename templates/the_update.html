@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <style>
+        body * {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form action="/update" method="post">
+        <h1>{{movie.title}}</h1>
+        <p>Edit Movie Rating</p>
+        <label for="">Your Rating Out of 10</label>
+        <input name="the_new_rating" min=0 max=10 type="number">
+        <label for="">Your Review</label>
+        <textarea name="the_new_review" placeholder="put your idea, here!"></textarea>
+        <button type="submit">Done</button>
+        <input type="hidden" name="id_carrier" value="{{movie.id}}">
+        <input type="hidden" name="place" value="hello">
+    </form>
+</body>
+</html>

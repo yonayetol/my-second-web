@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <style>
+        body *{
+            display: block;
+        }
+        body {
+            background-color: black;
+            color: rgb(205, 156, 156);
+        }
+        form {
+            margin-top: 20%;
+            margin-left: 20%;
+        }
+        button {
+            background-color: blanchedalmond;
+        }
+        .first{
+            padding-bottom: 5%;
+            font-size: 2rem;
+        }
+        .sec{
+            margin-bottom: 5%;
+        }
+        .main{
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <form action="/add" method="post">
+        <label class="first">Movie Title</label>
+        <div class="main">
+            <input class="sec" type="text" name="add" placeholder="put the title here">
+            <button type="submit">Add Movie</button>
+        </div>
+    </form>
+</body>
+</html>
